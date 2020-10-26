@@ -1,0 +1,24 @@
+<div class="container">
+  <h1 class="text-center">Flickr</h1>
+  <div class="form-group">
+    <input type="search" class="form-control" (keyup)="searchImage($event)" placeholder="Search images">
+  </div>
+  <div class="row">
+    <div class="col-sm-12 col-md-6 col-lg-4 p-3" *ngFor="let image of images">
+      <div class="card">
+        <a href="{{link}}">
+          <img src="{{image.media.m}}" title="{{image.title}}">
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12 col-md-6 col-lg-4 p-3" *ngFor="let image of searchedImages">
+      <div class="card">
+        <a href="{{image.url}}">
+          <img src="{{image.url}}" title="{{image.title}}">
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
